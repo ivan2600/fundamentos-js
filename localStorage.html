@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo Local Storage</title>
+</head>
+<body>
+  <p>item:</p>
+  <input type="text" id="item">
+  <p>valor:</p>
+  <input type="text" id="valor">
+  <button onclick="guardarNombre()">Guardar</button><br><br>
+  <p>nombre del item:</p>
+  <input type="text" id="nombreDelItem">
+  <button onclick="mostrarNombre()">Obtener nombre del <strong>local storage</strong></button>
+  <p id="resultado"></p>
+
+  <script>
+    
+
+    function guardarNombre() {
+      let item = document.getElementById('item').value;
+      let valor = document.getElementById('valor').value;
+      localStorage.setItem(item, valor);
+      console.log(item, valor);
+    }
+
+    function mostrarNombre() {
+      let nombreDelItem = document.getElementById('nombreDelItem').value;
+      let valorDelItem = localStorage.getItem(nombreDelItem);
+      document.getElementById('resultado').textContent = 'Valor: ' + valorDelItem;
+    }
+  </script>
+</body>
+</html>
